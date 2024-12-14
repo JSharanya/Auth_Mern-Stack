@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useAuthStore } from "../store/authStore";
 import toast from "react-hot-toast";
@@ -98,10 +98,8 @@ const EmailVerificationPage = () => {
 						disabled={isLoading || code.some((digit) => !digit)}
 						className='w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 disabled:opacity-50'
 					>
-						{/* <Link to='/'>{isLoading ? "Verifying..." : "Verify Email"}</Link> */}
-					<Link to='/'>Verify Email</Link>
-          
-          </motion.button>
+						{isLoading ? "Verifying..." : "Verify Email"}
+					</motion.button>
 				</form>
 			</motion.div>
 		</div>
